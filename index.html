@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baccalauréat Français - Examen 1 | M. Walid Abdelmonem</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter, Cormorant Garamond, Cinzel, Alex Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .font-cinzel {
+      font-family: 'Cinzel', serif;
+    }
+    .font-script {
+      font-family: 'Alex Brush', cursive;
+    }
+    .font-arabic {
+      font-family: 'Tajawal', sans-serif;
+    }
+    .french-flag-gradient {
+      background: linear-gradient(90deg, #002395 0%, #002395 33.33%, #ffffff 33.33%, #ffffff 66.66%, #ED2939 66.66%, #ED2939 100%);
+    }
+    .certificate-frame {
+      background: #ffffff;
+      border: 8px double #c59b27;
+      outline: 2px solid #0f2c59;
+      outline-offset: -12px;
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.2);
+    }
+    .gold-seal {
+      background: radial-gradient(circle, #fef08a 0%, #ca8a04 70%, #854d0e 100%);
+      box-shadow: 0 4px 10px rgba(161, 98, 7, 0.4);
+    }
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #certificate-wrapper, #certificate-wrapper * {
+        visibility: visible;
+      }
+      #certificate-wrapper {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background: white !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      @page {
+        size: A4 landscape;
+        margin: 8mm;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased bg-slate-100 flex flex-col justify-between">
+
+  <header class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 text-white shadow-lg sticky top-0 z-40 border-b-2 border-amber-500">
+    <div class="h-1.5 french-flag-gradient"></div>
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-full bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-300 text-xl font-bold font-cinzel">
+          BAC
+        </div>
+        <div>
+          <h1 class="text-lg md:text-xl font-bold tracking-tight font-cinzel text-amber-200">
+            BACCALAURÉAT ÉGYPTIEN — FRANÇAIS
+          </h1>
+          <p class="text-xs text-slate-300">
+            Unité 1 — Leçon 1 : <span class="text-amber-400 font-medium">Les repas de la journée</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Teacher Info & Direct WhatsApp Contact Button -->
+      <div class="flex items-center flex-wrap gap-2.5 sm:gap-4">
+        <div class="text-right">
+          <span class="text-xs uppercase tracking-wider text-slate-300 block">Enseignant / المعلم</span>
+          <span class="text-sm font-semibold text-white tracking-wide">M. Walid Abdelmonem</span>
+          <span class="text-xs text-amber-300 block font-arabic">(م/ وليد عبدالمنعم)</span>
+        </div>
+        <a href="https://wa.me/201144123549" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-200 shadow-md hover:shadow-emerald-600/30 ring-2 ring-emerald-400/50">
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span class="hidden sm:inline">WhatsApp:</span>
+          <span class="font-mono tracking-wider font-semibold">+20 11 44123549</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl w-full mx-auto px-4 py-8 flex-1">
+    
+    <!-- Official Exam Banner Card -->
+    <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden mb-8">
+      <div class="bg-gradient-to-r from-blue-900 to-indigo-950 p-6 text-white relative">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="bg-amber-400 text-blue-950 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider font-cinzel">
+              EXAMEN N° 1
+            </span>
+            <h2 class="text-2xl md:text-3xl font-bold font-cormorant mt-2 text-white">
+              Évaluation formative & Certificat d'Excellence
+            </h2>
+            <p class="text-xs md:text-sm text-slate-300 mt-1 italic">
+              "Le français, un atout pour ton avenir • Plus qu'un cours... une passion !"
+            </p>
+          </div>
+          <div class="text-right flex md:flex-col items-center md:items-end justify-between border-t md:border-t-0 border-white/20 pt-3 md:pt-0">
+            <span class="text-xs text-slate-300">Année scolaire : <strong>2026 - 2027</strong></span>
+            <span class="text-lg font-bold text-amber-300">Note Totale : 100 points</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Identification Form -->
+      <div class="p-6 bg-slate-50 border-b border-slate-200">
+        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+          <i class="fas fa-id-card text-blue-700"></i> Fiche de l'Élève (بيانات الطالب)
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label for="studentName" class="block text-xs font-semibold text-slate-700 mb-1">
+              Nom complet de l'élève (اسم الطالب) *
+            </label>
+            <input type="text" id="studentName" placeholder="Ex: Ahmed Mohamed..."
+                   class="w-full px-3.5 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+          </div>
+          <div>
+            <label for="studentClass" class="block text-xs font-semibold text-slate-700 mb-1">
+              Classe / Groupe (الفصل أو المجموعة)
+            </label>
+            <input type="text" id="studentClass" placeholder="Ex: 3ème Bac - Groupe A"
+                   class="w-full px-3.5 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+          </div>
+          <div>
+            <label for="examDate" class="block text-xs font-semibold text-slate-700 mb-1">
+              Date de l'examen (التاريخ)
+            </label>
+            <input type="date" id="examDate"
+                   class="w-full px-3.5 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Document Section: Compréhension des écrits -->
+    <section class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 md:p-8 mb-8">
+      <div class="flex items-center justify-between border-b pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-blue-100 text-blue-800 font-bold flex items-center justify-center font-cinzel">
+            I
+          </span>
+          <div>
+            <h3 class="text-xl font-bold text-slate-800 font-cinzel tracking-tight">
+              COMPRÉHENSION DES ÉCRITS
+            </h3>
+            <p class="text-xs text-blue-600 font-medium">Document 1 — Lire, Comprendre & Répondre</p>
+          </div>
+        </div>
+        <span class="text-xs md:text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+          <i class="fas fa-star text-amber-500 mr-1"></i> Barème : 100 Pts
+        </span>
+      </div>
+
+      <!-- Text Layout & Visual Flashcards -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Text Column (LTR French) -->
+        <div class="lg:col-span-8 bg-amber-50/50 border border-amber-200 rounded-2xl p-5 md:p-6 text-slate-800 text-left">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="text-lg md:text-xl font-bold font-cormorant text-blue-950 underline decoration-amber-400 decoration-2 underline-offset-4">
+              Les repas de Zahra
+            </h4>
+            <span class="text-xs text-slate-500 italic"><i class="fas fa-book-open mr-1"></i> Lisez attentivement</span>
+          </div>
+
+          <div class="space-y-4 text-sm md:text-base leading-relaxed text-slate-700 font-serif">
+            <p class="text-justify">
+              Chaque matin, <strong>Zahra</strong> prend son petit-déjeuner. Elle mange du fromage, du pain et elle boit du lait. Le matin est donc le moment du petit-déjeuner. À midi, sa mère prépare le déjeuner pour toute la famille. Zahra mange avec sa famille des légumes et du riz. Après le déjeuner, elle continue sa journée. L'après-midi, elle prend un goûter. Le soir, Zahra dîne avec sa famille.
+            </p>
+            <p class="text-justify">
+              Dans la journée, il y a différents repas : <strong>le petit-déjeuner le matin</strong>, <strong>le déjeuner à midi</strong>, <strong>le goûter l'après-midi</strong> et <strong>le dîner le soir</strong>. Pour composer un repas, on peut choisir différents aliments et différentes boissons. Au petit-déjeuner, on peut prendre du pain, du fromage ou de la confiture et boire du lait ou du café. On peut aussi manger un croissant. Pour le goûter, on peut manger un fruit, un sandwich ou des biscuits et boire du jus. Au dîner, on peut manger du pain, du fromage ou du yaourt et boire du thé.
+            </p>
+          </div>
+        </div>
+
+        <!-- Meals Info Cards -->
+        <div class="lg:col-span-4 space-y-3">
+          <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-center py-2 px-3 rounded-xl shadow-sm text-xs font-cinzel uppercase tracking-wider">
+            Les Repas de la Journée
+          </div>
+          
+          <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-200 text-amber-800 flex items-center justify-center text-lg">
+              🥐
+            </div>
+            <div>
+              <p class="text-xs font-bold text-amber-900">Petit-déjeuner</p>
+              <p class="text-xs text-amber-700">Le matin (lait, fromage, pain)</p>
+            </div>
+          </div>
+
+          <div class="bg-rose-50/70 border border-rose-200 rounded-xl p-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-rose-200 text-rose-800 flex items-center justify-center text-lg">
+              🍲
+            </div>
+            <div>
+              <p class="text-xs font-bold text-rose-900">Déjeuner</p>
+              <p class="text-xs text-rose-700">À midi (légumes, riz en famille)</p>
+            </div>
+          </div>
+
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-lg">
+              🍎
+            </div>
+            <div>
+              <p class="text-xs font-bold text-emerald-900">Goûter</p>
+              <p class="text-xs text-emerald-700">L'après-midi (fruit, biscuits, jus)</p>
+            </div>
+          </div>
+
+          <div class="bg-indigo-50/70 border border-indigo-200 rounded-xl p-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-200 text-indigo-800 flex items-center justify-center text-lg">
+              🫖
+            </div>
+            <div>
+              <p class="text-xs font-bold text-indigo-900">Dîner</p>
+              <p class="text-xs text-indigo-700">Le soir (fromage, yaourt, thé)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part A: QCM - Choisissez la bonne réponse -->
+    <section class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 md:p-8 mb-8">
+      <div class="flex items-center justify-between border-b pb-3 mb-6">
+        <div>
+          <span class="text-xs font-bold text-indigo-700 bg-indigo-100 px-2.5 py-1 rounded-md uppercase">Section A</span>
+          <h3 class="text-lg md:text-xl font-bold text-slate-800 mt-1 font-cinzel">
+            A. Choisissez la bonne réponse d'après le document (40 points)
+          </h3>
+        </div>
+        <span class="text-xs text-slate-500 font-semibold">5 questions × 8 pts</span>
+      </div>
+
+      <div id="qcm-container" class="space-y-6">
+        <!-- Dynamically injected questions with shuffled options -->
+      </div>
+    </section>
+
+    <!-- Part B: Vrai ou Faux -->
+    <section class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 md:p-8 mb-8">
+      <div class="flex items-center justify-between border-b pb-3 mb-6">
+        <div>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-md uppercase">Section B</span>
+          <h3 class="text-lg md:text-xl font-bold text-slate-800 mt-1 font-cinzel">
+            B. Mettez (Vrai) ou (Faux) d'après le document (30 points)
+          </h3>
+        </div>
+        <span class="text-xs text-slate-500 font-semibold">4 questions = 30 pts</span>
+      </div>
+
+      <div id="vf-container" class="space-y-4">
+        <!-- Vrai/Faux items injected here -->
+      </div>
+    </section>
+
+    <!-- Part C: Questions à réponse courte -->
+    <section class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 md:p-8 mb-8">
+      <div class="flex items-center justify-between border-b pb-3 mb-6">
+        <div>
+          <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md uppercase">Section C</span>
+          <h3 class="text-lg md:text-xl font-bold text-slate-800 mt-1 font-cinzel">
+            C. Répondez aux questions d'après le document (30 points)
+          </h3>
+        </div>
+        <span class="text-xs text-slate-500 font-semibold">3 questions × 10 pts</span>
+      </div>
+
+      <div id="short-answer-container" class="space-y-6">
+        <!-- Short answers injected here -->
+      </div>
+    </section>
+
+    <!-- Submit Action Button -->
+    <div class="text-center mb-10">
+      <button id="btn-submit-exam" onclick="corrigerExamen()"
+              class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-900 to-indigo-800 hover:from-blue-800 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-2xl text-lg shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-amber-400">
+        <i class="fas fa-check-double text-amber-300 text-xl"></i>
+        <span>Valider et Corriger l'Examen (تصحيح الاختبار)</span>
+      </button>
+      <p class="text-xs text-slate-500 mt-2">
+        Veuillez renseigner votre nom pour éditer votre certificat officiel.
+      </p>
+    </div>
+
+    <!-- Exam Result Summary Box (Hidden initially) -->
+    <div id="result-card" class="hidden bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8 mb-8 transition-all">
+      <div class="text-center max-w-xl mx-auto">
+        <div id="result-badge" class="w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl mb-4 shadow-inner">
+          🎯
+        </div>
+        <h3 id="result-title" class="text-2xl font-bold font-cinzel text-slate-800 mb-1">
+          Résultat de l'Évaluation
+        </h3>
+        <p id="result-student" class="text-sm font-medium text-slate-600 mb-4"></p>
+        
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <span id="final-score" class="text-5xl font-extrabold text-blue-900 font-mono">0</span>
+          <span class="text-2xl font-bold text-slate-400 font-mono">/ 100</span>
+        </div>
+
+        <div id="result-mention" class="text-base font-semibold px-4 py-2 rounded-xl inline-block mb-6"></div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <button onclick="scrollToCertificate()" 
+                  class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-2.5 rounded-xl shadow-md transition flex items-center gap-2 text-sm">
+            <i class="fas fa-award text-amber-200"></i> Voir & Imprimer la الشهادة
+          </button>
+          <a id="whatsapp-share-btn" href="#" target="_blank"
+             class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-xl shadow-md transition flex items-center gap-2 text-sm">
+            <i class="fab fa-whatsapp text-lg"></i> Envoyer la note à M. Walid
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LUXURIOUS PRINTABLE FRENCH CERTIFICATE -->
+    <section id="certificate-wrapper" class="hidden mb-12">
+      <div class="flex justify-between items-center mb-3 no-print max-w-4xl mx-auto">
+        <span class="text-sm font-bold text-slate-700 flex items-center gap-2">
+          <i class="fas fa-scroll text-amber-600"></i> Certificat Officiel d'Excellence
+        </span>
+        <button onclick="window.print()" class="bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center gap-2 shadow transition">
+          <i class="fas fa-print text-amber-300"></i> Imprimer le Certificat (طباعة الشهادة)
+        </button>
+      </div>
+
+      <div class="certificate-frame p-8 md:p-12 relative max-w-4xl mx-auto rounded-3xl overflow-hidden bg-gradient-to-b from-amber-50/20 via-white to-amber-50/30">
+        <!-- Corner Ornaments -->
+        <div class="absolute top-3 left-4 text-amber-600 text-xl font-serif">❦</div>
+        <div class="absolute top-3 right-4 text-amber-600 text-xl font-serif">❦</div>
+        <div class="absolute bottom-3 left-4 text-amber-600 text-xl font-serif">❦</div>
+        <div class="absolute bottom-3 right-4 text-amber-600 text-xl font-serif">❦</div>
+
+        <!-- Certificate Header -->
+        <div class="text-center relative z-10">
+          <div class="flex items-center justify-center gap-3 mb-2">
+            <span class="h-0.5 w-12 bg-amber-500"></span>
+            <span class="text-xs uppercase tracking-widest text-slate-600 font-cinzel font-bold">
+              RÉPUBLIQUE FRANÇAISE • ENSEIGNEMENT DU BACCALAURÉAT
+            </span>
+            <span class="h-0.5 w-12 bg-amber-500"></span>
+          </div>
+
+          <h2 class="text-3xl md:text-5xl font-cinzel font-black tracking-wider text-blue-950 uppercase mb-1">
+            Certificat d'Excellence
+          </h2>
+          <p class="font-cormorant italic text-lg text-amber-800 font-bold tracking-wide">
+            Attestation de Réussite et de Mérite Académique
+          </p>
+        </div>
+
+        <!-- Body / Award Statement -->
+        <div class="my-8 text-center relative z-10">
+          <p class="text-sm font-serif text-slate-600 uppercase tracking-widest mb-2">
+            Le présent certificat est décerné avec les félicitations à :
+          </p>
+          
+          <div id="cert-student-name" class="text-2xl md:text-4xl font-bold font-cormorant text-blue-900 border-b-2 border-amber-400 inline-block px-8 py-1 tracking-wide">
+            Nom de l'élève
+          </div>
+
+          <p class="text-sm md:text-base text-slate-700 max-w-2xl mx-auto mt-4 leading-relaxed font-serif">
+            Pour avoir brillamment réussi l'examen de français : <br>
+            <strong class="font-semibold text-blue-950">« Unité 1 - Leçon 1 : Les repas de la journée »</strong><br>
+            en obtenant la note d'honneur de <span id="cert-score" class="font-bold text-blue-900 text-lg">100/100</span> avec mention <span id="cert-mention" class="font-bold text-amber-700 italic">Très Bien</span>.
+          </p>
+        </div>
+
+        <!-- Signatures and Gold Medal Seal -->
+        <div class="grid grid-cols-3 items-end pt-6 border-t border-amber-200 relative z-10 text-center">
+          <!-- Date & Reference -->
+          <div class="text-left text-xs text-slate-600 font-serif">
+            <p>Délivré le : <span id="cert-date" class="font-semibold text-slate-800">25/09/2026</span></p>
+            <p class="mt-1">Réf: <span class="font-mono text-slate-500">BAC-FR-2026/01</span></p>
+            <p class="mt-1 text-slate-500">Baccalauréat Égyptien</p>
+          </div>
+
+          <!-- Official Gold Seal -->
+          <div class="flex justify-center">
+            <div class="gold-seal w-24 h-24 rounded-full border-4 border-amber-100 flex flex-col items-center justify-center text-amber-950 p-2 shadow-lg transform rotate-[-6deg]">
+              <i class="fas fa-crown text-xl text-amber-900 mb-1"></i>
+              <span class="text-[9px] font-cinzel font-black uppercase tracking-tighter leading-tight text-center">
+                EXCELLENCE<br>FRANÇAISE<br>★ 2026 ★
+              </span>
+            </div>
+          </div>
+
+          <!-- Teacher Signature -->
+          <div class="text-right">
+            <p class="text-xs uppercase text-slate-500 font-bold tracking-wider mb-1">
+              Professeur de Français
+            </p>
+            <p class="font-script text-2xl md:text-3xl text-blue-950 leading-tight">
+              Walid Abdelmonem
+            </p>
+            <p class="text-xs font-semibold text-slate-800">
+              M. Walid Abdelmonem
+            </p>
+            <p class="text-[11px] text-emerald-700 font-mono mt-0.5">
+              WhatsApp : +20 11 44123549
+            </p>
+          </div>
+        </div>
+
+        <!-- Watermark motif -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+          <i class="fas fa-landmark text-[240px] text-blue-900"></i>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800 no-print">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>
+        <span class="font-bold text-white">Baccalauréat Égyptien — Français</span> • Préparé par 
+        <strong class="text-amber-400">M. Walid Abdelmonem</strong>
+      </div>
+      <div>
+        <a href="https://wa.me/201144123549" class="hover:text-emerald-400 transition inline-flex items-center gap-1.5 font-mono">
+          <i class="fab fa-whatsapp text-emerald-500"></i> +20 11 44123549
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Exam Data with questions & answers based on the document
+    const rawQuestionsQCM = [
+      {
+        id: "q1",
+        label: "1. Zahra prend son petit-déjeuner ..........",
+        options: [
+          { text: "Le matin", correct: true },
+          { text: "À midi", correct: false },
+          { text: "L'après-midi", correct: false },
+          { text: "Le soir", correct: false }
+        ],
+        points: 8,
+        explanation: "D'après le texte : 'Chaque matin, Zahra prend son petit-déjeuner. Le matin est donc le moment du petit-déjeuner.'"
+      },
+      {
+        id: "q2",
+        label: "2. Au petit-déjeuner, Zahra boit ..........",
+        options: [
+          { text: "Du lait", correct: true },
+          { text: "Du café", correct: false },
+          { text: "Du thé", correct: false },
+          { text: "Du jus", correct: false }
+        ],
+        points: 8,
+        explanation: "D'après le texte : 'Elle mange du fromage, du pain et elle boit du lait.'"
+      },
+      {
+        id: "q3",
+        label: "3. À midi, la famille mange ..........",
+        options: [
+          { text: "Des légumes et du riz", correct: true },
+          { text: "Des biscuits et du jus", correct: false },
+          { text: "Du gâteau et du thé", correct: false },
+          { text: "Un croissant et du fromage", correct: false }
+        ],
+        points: 8,
+        explanation: "D'après le texte : 'Zahra mange avec sa famille des légumes et du riz.'"
+      },
+      {
+        id: "q4",
+        label: "4. Zahra prend son goûter ..........",
+        options: [
+          { text: "L'après-midi", correct: true },
+          { text: "Le matin", correct: false },
+          { text: "À midi", correct: false },
+          { text: "Le soir", correct: false }
+        ],
+        points: 8,
+        explanation: "D'après le texte : 'L'après-midi, elle prend un goûter.'"
+      },
+      {
+        id: "q5",
+        label: "5. Le soir, Zahra ..........",
+        options: [
+          { text: "Dîne", correct: true },
+          { text: "Prend son petit-déjeuner", correct: false },
+          { text: "Déjeune", correct: false },
+          { text: "Prend son goûter", correct: false }
+        ],
+        points: 8,
+        explanation: "D'après le texte : 'Le soir, Zahra dîne avec sa famille.'"
+      }
+    ];
+
+    const questionsVF = [
+      {
+        id: "vf1",
+        label: "1. Zahra prend son petit-déjeuner le matin.",
+        correct: "Vrai",
+        points: 7.5,
+        explanation: "Vrai : Le petit-déjeuner se prend le matin."
+      },
+      {
+        id: "vf2",
+        label: "2. La famille prend le déjeuner le soir.",
+        correct: "Faux",
+        points: 7.5,
+        explanation: "Faux : La famille déjeune à midi et dîne le soir."
+      },
+      {
+        id: "vf3",
+        label: "3. Zahra prend un goûter l'après-midi.",
+        correct: "Vrai",
+        points: 7.5,
+        explanation: "Vrai : L'après-midi, elle prend un goûter."
+      },
+      {
+        id: "vf4",
+        label: "4. Zahra dîne avec sa famille.",
+        correct: "Vrai",
+        points: 7.5,
+        explanation: "Vrai : 'Le soir, Zahra dîne avec sa famille.'"
+      }
+    ];
+
+    const questionsShort = [
+      {
+        id: "short1",
+        label: "1. Qu'est-ce que Zahra mange au petit-déjeuner ?",
+        expectedKeywords: ["fromage", "pain"],
+        modelAnswer: "Elle mange du fromage et du pain (et boit du lait).",
+        points: 10
+      },
+      {
+        id: "short2",
+        label: "2. Qu'est-ce que la famille mange à midi ?",
+        expectedKeywords: ["légumes", "riz"],
+        modelAnswer: "La famille mange des légumes et du riz.",
+        points: 10
+      },
+      {
+        id: "short3",
+        label: "3. Avec qui Zahra dîne-t-elle ?",
+        expectedKeywords: ["famille"],
+        modelAnswer: "Elle dîne avec sa famille.",
+        points: 10
+      }
+    ];
+
+    // Fisher-Yates array shuffler to randomize option choices
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // Render Part A questions with scrambled choices
+    function renderQCM() {
+      const container = document.getElementById("qcm-container");
+      container.innerHTML = "";
+
+      rawQuestionsQCM.forEach((q, index) => {
+        const shuffled = shuffleArray(q.options);
+        const qDiv = document.createElement("div");
+        qDiv.className = "p-4 md:p-5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-slate-50 transition";
+        qDiv.id = `card-${q.id}`;
+
+        let optionsHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">`;
+        shuffled.forEach((opt, optIdx) => {
+          const optId = `${q.id}_opt_${optIdx}`;
+          optionsHtml += `
+            <label for="${optId}" class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/30 transition text-sm text-slate-800">
+              <input type="radio" id="${optId}" name="${q.id}" value="${encodeURIComponent(opt.text)}" data-is-correct="${opt.correct}"
+                     class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-slate-300">
+              <span class="font-medium">${opt.text}</span>
+            </label>
+          `;
+        });
+        optionsHtml += `</div>`;
+
+        qDiv.innerHTML = `
+          <div class="flex items-start justify-between">
+            <p class="font-semibold text-slate-900 text-sm md:text-base">${q.label}</p>
+            <span class="text-xs font-semibold text-slate-400 bg-white px-2 py-0.5 rounded border border-slate-200">8 Pts</span>
+          </div>
+          ${optionsHtml}
+          <div id="feedback-${q.id}" class="hidden mt-3 text-xs p-2.5 rounded-lg"></div>
+        `;
+        container.appendChild(qDiv);
+      });
+    }
+
+    // Render Part B (Vrai / Faux)
+    function renderVF() {
+      const container = document.getElementById("vf-container");
+      container.innerHTML = "";
+
+      questionsVF.forEach((item) => {
+        const row = document.createElement("div");
+        row.className = "flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 bg-slate-50/70 border border-slate-200 rounded-xl";
+        row.id = `card-${item.id}`;
+
+        row.innerHTML = `
+          <div class="flex-1">
+            <span class="font-medium text-slate-800 text-sm md:text-base">${item.label}</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <label class="inline-flex items-center gap-1.5 cursor-pointer text-sm font-semibold text-emerald-700 bg-white px-3 py-1.5 rounded-lg border border-slate-200 hover:border-emerald-500">
+              <input type="radio" name="${item.id}" value="Vrai" class="w-4 h-4 text-emerald-600 focus:ring-emerald-500">
+              <span>Vrai</span>
+            </label>
+            <label class="inline-flex items-center gap-1.5 cursor-pointer text-sm font-semibold text-rose-700 bg-white px-3 py-1.5 rounded-lg border border-slate-200 hover:border-rose-500">
+              <input type="radio" name="${item.id}" value="Faux" class="w-4 h-4 text-rose-600 focus:ring-rose-500">
+              <span>Faux</span>
+            </label>
+          </div>
+          <div id="feedback-${item.id}" class="hidden w-full text-xs p-2.5 rounded-lg mt-2"></div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    // Render Part C (Short Answer)
+    function renderShortAnswers() {
+      const container = document.getElementById("short-answer-container");
+      container.innerHTML = "";
+
+      questionsShort.forEach((item) => {
+        const block = document.createElement("div");
+        block.className = "p-4 md:p-5 bg-slate-50/70 border border-slate-200 rounded-xl";
+        block.id = `card-${item.id}`;
+
+        block.innerHTML = `
+          <div class="flex justify-between items-start mb-2">
+            <label for="input-${item.id}" class="font-medium text-slate-800 text-sm md:text-base">${item.label}</label>
+            <span class="text-xs font-semibold text-slate-400 bg-white px-2 py-0.5 rounded border border-slate-200">10 Pts</span>
+          </div>
+          <input type="text" id="input-${item.id}" placeholder="Écrivez votre réponse ici en français..."
+                 class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+          <div id="feedback-${item.id}" class="hidden mt-2 text-xs p-2.5 rounded-lg"></div>
+        `;
+        container.appendChild(block);
+      });
+    }
+
+    function corrigerExamen() {
+      const studentNameInput = document.getElementById("studentName").value.trim();
+      const studentName = studentNameInput || "Cher(e) Élève";
+      let totalScore = 0;
+
+      // 1. Check Section A (QCM: 40 pts)
+      rawQuestionsQCM.forEach((q) => {
+        const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+        const feedbackDiv = document.getElementById(`feedback-${q.id}`);
+        feedbackDiv.classList.remove("hidden", "bg-emerald-50", "text-emerald-800", "border-emerald-200", "bg-rose-50", "text-rose-800", "border-rose-200");
+        feedbackDiv.classList.add("border");
+
+        if (selected && selected.getAttribute("data-is-correct") === "true") {
+          totalScore += q.points;
+          feedbackDiv.className = "mt-2 text-xs p-2.5 rounded-lg border bg-emerald-50 text-emerald-800 border-emerald-300";
+          feedbackDiv.innerHTML = `<i class="fas fa-check-circle mr-1 text-emerald-600"></i> <strong>Excellent (+${q.points} pts) :</strong> ${q.explanation}`;
+        } else {
+          const correctOpt = q.options.find(o => o.correct);
+          feedbackDiv.className = "mt-2 text-xs p-2.5 rounded-lg border bg-rose-50 text-rose-800 border-rose-300";
+          feedbackDiv.innerHTML = `<i class="fas fa-times-circle mr-1 text-rose-600"></i> <strong>Incorrect :</strong> La bonne réponse est : <em>"${correctOpt.text}"</em>. (${q.explanation})`;
+        }
+      });
+
+      // 2. Check Section B (Vrai / Faux: 30 pts)
+      questionsVF.forEach((item) => {
+        const selected = document.querySelector(`input[name="${item.id}"]:checked`);
+        const feedbackDiv = document.getElementById(`feedback-${item.id}`);
+        feedbackDiv.classList.remove("hidden");
+
+        if (selected && selected.value === item.correct) {
+          totalScore += item.points;
+          feedbackDiv.className = "w-full text-xs p-2.5 rounded-lg border bg-emerald-50 text-emerald-800 border-emerald-300 mt-2";
+          feedbackDiv.innerHTML = `<i class="fas fa-check-circle mr-1 text-emerald-600"></i> <strong>Correct (+${item.points} pts) :</strong> ${item.explanation}`;
+        } else {
+          feedbackDiv.className = "w-full text-xs p-2.5 rounded-lg border bg-rose-50 text-rose-800 border-rose-300 mt-2";
+          feedbackDiv.innerHTML = `<i class="fas fa-times-circle mr-1 text-rose-600"></i> <strong>Incorrect :</strong> Réponse attendue : <em>"${item.correct}"</em>. (${item.explanation})`;
+        }
+      });
+
+      // 3. Check Section C (Short Answers: 30 pts)
+      questionsShort.forEach((item) => {
+        const inputVal = (document.getElementById(`input-${item.id}`).value || "").toLowerCase().trim();
+        const feedbackDiv = document.getElementById(`feedback-${item.id}`);
+        feedbackDiv.classList.remove("hidden");
+
+        const matches = item.expectedKeywords.filter(kw => inputVal.includes(kw.toLowerCase()));
+        if (matches.length > 0) {
+          totalScore += item.points;
+          feedbackDiv.className = "mt-2 text-xs p-2.5 rounded-lg border bg-emerald-50 text-emerald-800 border-emerald-300";
+          feedbackDiv.innerHTML = `<i class="fas fa-check-circle mr-1 text-emerald-600"></i> <strong>Très bien (+${item.points} pts) !</strong> Réponse modèle : <em>${item.modelAnswer}</em>`;
+        } else {
+          feedbackDiv.className = "mt-2 text-xs p-2.5 rounded-lg border bg-amber-50 text-amber-900 border-amber-300";
+          feedbackDiv.innerHTML = `<i class="fas fa-info-circle mr-1 text-amber-600"></i> Réponse suggérée : <em>${item.modelAnswer}</em>`;
+        }
+      });
+
+      // Round score
+      totalScore = Math.min(100, Math.round(totalScore));
+
+      // Display Results Card
+      const resultCard = document.getElementById("result-card");
+      resultCard.classList.remove("hidden");
+      document.getElementById("final-score").textContent = totalScore;
+      document.getElementById("result-student").textContent = `Élève : ${studentName}`;
+
+      const badge = document.getElementById("result-badge");
+      const mentionDiv = document.getElementById("result-mention");
+      let mentionText = "Passable";
+
+      if (totalScore >= 85) {
+        mentionText = "Mention Très Bien — Félicitations Royales !";
+        badge.className = "w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl mb-4 bg-emerald-100 text-emerald-600 border-2 border-emerald-400";
+        mentionDiv.className = "text-base font-semibold px-4 py-2 rounded-xl inline-block mb-6 bg-emerald-100 text-emerald-800 border border-emerald-300";
+        // Confetti celebration
+        if (typeof confetti === 'function') {
+          confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+        }
+      } else if (totalScore >= 65) {
+        mentionText = "Mention Bien — Bon Travail !";
+        badge.className = "w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl mb-4 bg-blue-100 text-blue-600 border-2 border-blue-400";
+        mentionDiv.className = "text-base font-semibold px-4 py-2 rounded-xl inline-block mb-6 bg-blue-100 text-blue-800 border border-blue-300";
+      } else {
+        mentionText = "Doit Réviser le Document";
+        badge.className = "w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl mb-4 bg-amber-100 text-amber-600 border-2 border-amber-400";
+        mentionDiv.className = "text-base font-semibold px-4 py-2 rounded-xl inline-block mb-6 bg-amber-100 text-amber-800 border border-amber-300";
+      }
+
+      mentionDiv.textContent = mentionText;
+
+      // Fill Certificate
+      const certWrapper = document.getElementById("certificate-wrapper");
+      certWrapper.classList.remove("hidden");
+      document.getElementById("cert-student-name").textContent = studentName;
+      document.getElementById("cert-score").textContent = `${totalScore}/100`;
+      document.getElementById("cert-mention").textContent = mentionText;
+
+      const dateInput = document.getElementById("examDate").value;
+      if (dateInput) {
+        const [yyyy, mm, dd] = dateInput.split("-");
+        document.getElementById("cert-date").textContent = `${dd}/${mm}/${yyyy}`;
+      } else {
+        const today = new Date();
+        document.getElementById("cert-date").textContent = today.toLocaleDateString("fr-FR");
+      }
+
+      // Prepare WhatsApp message
+      const encodedMsg = encodeURIComponent(
+        `Bonjour Monsieur Walid Abdelmonem,\n\nJe viens de terminer l'examen de français (Unité 1 - Les repas de la journée).\nNom : ${studentName}\nNote obtenue : ${totalScore}/100 (${mentionText}).\nMerci beaucoup !`
+      );
+      document.getElementById("whatsapp-share-btn").href = `https://wa.me/201144123549?text=${encodedMsg}`;
+
+      // Smooth scroll to result
+      resultCard.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function scrollToCertificate() {
+      const cert = document.getElementById("certificate-wrapper");
+      cert.scrollIntoView({ behavior: "smooth" });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      // Set default exam date to today
+      const dateEl = document.getElementById("examDate");
+      const now = new Date();
+      const yr = now.getFullYear();
+      const mo = String(now.getMonth() + 1).padStart(2, "0");
+      const da = String(now.getDate()).padStart(2, "0");
+      dateEl.value = `${yr}-${mo}-${da}`;
+
+      // Render all question parts
+      renderQCM();
+      renderVF();
+      renderShortAnswers();
+    });
+  </script>
+</body>
+</html>
