@@ -6,7 +6,7 @@
   <title>Baccalauréat Français - Examen 1 | M. Walid Abdelmonem</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter, Cormorant Garamond, Cinzel, Alex Brush -->
+  <!-- Google Fonts: Inter, Cormorant Garamond, Cinzel, Alex Brush, Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
@@ -179,7 +179,7 @@
             <h3 class="text-xl font-bold text-slate-800 font-cinzel tracking-tight">
               COMPRÉHENSION DES ÉCRITS
             </h3>
-            <p class="text-xs text-blue-600 font-medium">Document 1 — Lire, Comprendre & Répondre</p>
+            <p class="text-xs text-blue-600 font-medium">Document 1 — Lire attentivement le texte, puis répondre aux questions</p>
           </div>
         </div>
         <span class="text-xs md:text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
@@ -187,72 +187,27 @@
         </span>
       </div>
 
-      <!-- Text Layout & Visual Flashcards -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <!-- Text Column (LTR French) -->
-        <div class="lg:col-span-8 bg-amber-50/50 border border-amber-200 rounded-2xl p-5 md:p-6 text-slate-800 text-left">
-          <div class="flex items-center justify-between mb-4">
-            <h4 class="text-lg md:text-xl font-bold font-cormorant text-blue-950 underline decoration-amber-400 decoration-2 underline-offset-4">
+      <!-- Text Layout: Full-width clean exam format -->
+      <div class="w-full bg-gradient-to-b from-amber-50/40 to-slate-50/30 border-2 border-amber-200/80 rounded-2xl p-6 md:p-8 text-slate-800 text-left shadow-sm">
+        <div class="flex items-center justify-between pb-3 mb-4 border-b border-amber-200/60">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">📖</span>
+            <h4 class="text-2xl md:text-3xl font-bold font-cormorant text-blue-950 underline decoration-amber-400 decoration-2 underline-offset-8">
               Les repas de Zahra
             </h4>
-            <span class="text-xs text-slate-500 italic"><i class="fas fa-book-open mr-1"></i> Lisez attentivement</span>
           </div>
-
-          <div class="space-y-4 text-sm md:text-base leading-relaxed text-slate-700 font-serif">
-            <p class="text-justify">
-              Chaque matin, <strong>Zahra</strong> prend son petit-déjeuner. Elle mange du fromage, du pain et elle boit du lait. Le matin est donc le moment du petit-déjeuner. À midi, sa mère prépare le déjeuner pour toute la famille. Zahra mange avec sa famille des légumes et du riz. Après le déjeuner, elle continue sa journée. L'après-midi, elle prend un goûter. Le soir, Zahra dîne avec sa famille.
-            </p>
-            <p class="text-justify">
-              Dans la journée, il y a différents repas : <strong>le petit-déjeuner le matin</strong>, <strong>le déjeuner à midi</strong>, <strong>le goûter l'après-midi</strong> et <strong>le dîner le soir</strong>. Pour composer un repas, on peut choisir différents aliments et différentes boissons. Au petit-déjeuner, on peut prendre du pain, du fromage ou de la confiture et boire du lait ou du café. On peut aussi manger un croissant. Pour le goûter, on peut manger un fruit, un sandwich ou des biscuits et boire du jus. Au dîner, on peut manger du pain, du fromage ou du yaourt et boire du thé.
-            </p>
-          </div>
+          <span class="text-xs font-semibold bg-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 shadow-xs flex items-center gap-1.5">
+            <i class="fas fa-book-open text-amber-500"></i> Document officiel
+          </span>
         </div>
 
-        <!-- Meals Info Cards -->
-        <div class="lg:col-span-4 space-y-3">
-          <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-center py-2 px-3 rounded-xl shadow-sm text-xs font-cinzel uppercase tracking-wider">
-            Les Repas de la Journée
-          </div>
-          
-          <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-3 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-amber-200 text-amber-800 flex items-center justify-center text-lg">
-              🥐
-            </div>
-            <div>
-              <p class="text-xs font-bold text-amber-900">Petit-déjeuner</p>
-              <p class="text-xs text-amber-700">Le matin (lait, fromage, pain)</p>
-            </div>
-          </div>
-
-          <div class="bg-rose-50/70 border border-rose-200 rounded-xl p-3 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-rose-200 text-rose-800 flex items-center justify-center text-lg">
-              🍲
-            </div>
-            <div>
-              <p class="text-xs font-bold text-rose-900">Déjeuner</p>
-              <p class="text-xs text-rose-700">À midi (légumes, riz en famille)</p>
-            </div>
-          </div>
-
-          <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-3 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-lg">
-              🍎
-            </div>
-            <div>
-              <p class="text-xs font-bold text-emerald-900">Goûter</p>
-              <p class="text-xs text-emerald-700">L'après-midi (fruit, biscuits, jus)</p>
-            </div>
-          </div>
-
-          <div class="bg-indigo-50/70 border border-indigo-200 rounded-xl p-3 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-indigo-200 text-indigo-800 flex items-center justify-center text-lg">
-              🫖
-            </div>
-            <div>
-              <p class="text-xs font-bold text-indigo-900">Dîner</p>
-              <p class="text-xs text-indigo-700">Le soir (fromage, yaourt, thé)</p>
-            </div>
-          </div>
+        <div class="space-y-4 text-base md:text-lg leading-relaxed text-slate-800 font-serif">
+          <p class="text-justify indent-6">
+            Chaque matin, <strong>Zahra</strong> prend son petit-déjeuner. Elle mange du fromage, du pain et elle boit du lait. Le matin est donc le moment du petit-déjeuner. À midi, sa mère prépare le déjeuner pour toute la famille. Zahra mange avec sa famille des légumes et du riz. Après le déjeuner, elle continue sa journée. L'après-midi, elle prend un goûter. Le soir, Zahra dîne avec sa famille.
+          </p>
+          <p class="text-justify indent-6">
+            Dans la journée, il y a différents repas : <strong>le petit-déjeuner le matin</strong>, <strong>le déjeuner à midi</strong>, <strong>le goûter l'après-midi</strong> et <strong>le dîner le soir</strong>. Pour composer un repas, on peut choisir différents aliments et différentes boissons. Au petit-déjeuner, on peut prendre du pain, du fromage ou de la confiture et boire du lait ou du café. On peut aussi manger un croissant. Pour le goûter, on peut manger un fruit, un sandwich ou des biscuits et boire du jus. Au dîner, on peut manger du pain, du fromage ou du yaourt et boire du thé.
+          </p>
         </div>
       </div>
     </section>
@@ -408,7 +363,7 @@
         <div class="grid grid-cols-3 items-end pt-6 border-t border-amber-200 relative z-10 text-center">
           <!-- Date & Reference -->
           <div class="text-left text-xs text-slate-600 font-serif">
-            <p>Délivré le : <span id="cert-date" class="font-semibold text-slate-800">25/09/2026</span></p>
+            <p>Délivré le : <span id="cert-date" class="font-semibold text-slate-800">26/09/2026</span></p>
             <p class="mt-1">Réf: <span class="font-mono text-slate-500">BAC-FR-2026/01</span></p>
             <p class="mt-1 text-slate-500">Baccalauréat Égyptien</p>
           </div>
@@ -598,7 +553,7 @@
       const container = document.getElementById("qcm-container");
       container.innerHTML = "";
 
-      rawQuestionsQCM.forEach((q, index) => {
+      rawQuestionsQCM.forEach((q) => {
         const shuffled = shuffleArray(q.options);
         const qDiv = document.createElement("div");
         qDiv.className = "p-4 md:p-5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-slate-50 transition";
@@ -755,7 +710,6 @@
         mentionText = "Mention Très Bien — Félicitations Royales !";
         badge.className = "w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl mb-4 bg-emerald-100 text-emerald-600 border-2 border-emerald-400";
         mentionDiv.className = "text-base font-semibold px-4 py-2 rounded-xl inline-block mb-6 bg-emerald-100 text-emerald-800 border border-emerald-300";
-        // Confetti celebration
         if (typeof confetti === 'function') {
           confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
         }
@@ -787,9 +741,9 @@
         document.getElementById("cert-date").textContent = today.toLocaleDateString("fr-FR");
       }
 
-      // Prepare WhatsApp message
+      // WhatsApp direct message composition
       const encodedMsg = encodeURIComponent(
-        `Bonjour Monsieur Walid Abdelmonem,\n\nJe viens de terminer l'examen de français (Unité 1 - Les repas de la journée).\nNom : ${studentName}\nNote obtenue : ${totalScore}/100 (${mentionText}).\nMerci beaucoup !`
+        `Bonjour Monsieur Walid Abdelmonem,\n\nJe viens de terminer l'examen de français (Unité 1 - Les repas de la journée).\nNom de l'élève : ${studentName}\nNote obtenue : ${totalScore}/100 (${mentionText}).\nMerci beaucoup !`
       );
       document.getElementById("whatsapp-share-btn").href = `https://wa.me/201144123549?text=${encodedMsg}`;
 
@@ -803,7 +757,6 @@
     }
 
     window.addEventListener("DOMContentLoaded", () => {
-      // Set default exam date to today
       const dateEl = document.getElementById("examDate");
       const now = new Date();
       const yr = now.getFullYear();
@@ -811,7 +764,6 @@
       const da = String(now.getDate()).padStart(2, "0");
       dateEl.value = `${yr}-${mo}-${da}`;
 
-      // Render all question parts
       renderQCM();
       renderVF();
       renderShortAnswers();
